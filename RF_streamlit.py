@@ -16,7 +16,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Đọc dữ liệu
-file_path = "https://raw.githubusercontent.com/thien1101/NCKH/main/data_1723.csv"
+file_path = "https://raw.githubusercontent.com/<thien1101>/<NCKH>/main/data_1723.csv"
+
 try:
     df = pd.read_csv(file_path)
 except FileNotFoundError:
