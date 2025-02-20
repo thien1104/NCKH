@@ -94,17 +94,15 @@ with col2:
 with col1:
     
 # Hiển thị chọn ngày với giới hạn trong khoảng min_date - max_date
+    st.markdown("### 📆 Chọn ngày để dự đoán:")
     selected_date = st.date_input(
-    "#### 📆 Chọn ngày để dự đoán:", 
-    value=min_date,  # Mặc định là ngày nhỏ nhất
-    min_value=min_date, 
-    max_value=max_date
-)
+        "", 
+        value=min_date,  # Mặc định là ngày nhỏ nhất
+        min_value=min_date, 
+        max_value=max_date
+    )
 # Chuyển ngày đã chọn thành số ngày (ordinal) để sử dụng cho mô hình
     selected_day_num = pd.Timestamp(selected_date).toordinal()
-
-    st.write(f"🔹 Ngày đã chọn: {selected_date} ({selected_day_num})")
-
 # Dự đoán giá trị Q2 cho ngày được chọn
     input_data = np.array([[selected_day_num, 0]])  # X = 0 vì không sử dụng giá trị X
     input_data_scaled = scaler_X.transform(input_data)
