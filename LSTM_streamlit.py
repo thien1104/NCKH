@@ -70,7 +70,7 @@ rmse = np.sqrt(mean_squared_error(y_test_original, y_pred))
 mae = mean_absolute_error(y_test_original, y_pred)
 nse = 1 - np.sum((y_test_original - y_pred) ** 2) / np.sum((y_test_original - np.mean(y_test_original)) ** 2)
 
-st.markdown("## 🔴 Kết quả đánh giá mô hình")
+st.markdown("### 🔴 Kết quả đánh giá mô hình")
 st.markdown(f"""
 <h3>➡ MAE (Q2): <span style='color: red;'>{mae:.2f} m³/s</span>;
     RMSE (Q2): <span style='color: red;'>{rmse:.2f} m³/s</span>;
@@ -92,15 +92,15 @@ with col2:
 with col1:
     # Hiển thị bảng dữ liệu so sánh
     data_comparison = pd.DataFrame({
-    "Giá trị thực tế (m³/s)": y_test_original.flatten(),
+    "Giá trị thực tế (m³/s)": {y_test_original.flatten()},
     "Giá trị dự đoán (m³/s)": y_pred.flatten()
     })
 
-    st.markdown("## 🔴 Bảng so sánh giá trị thực tế và dự đoán")
+    st.markdown("### 🔴 Bảng so sánh giá trị thực tế và dự đoán")
     st.dataframe(data_comparison)
 # Thêm chức năng chọn ngày và dự đoán giá trị Q2
-st.markdown("## 🔴 Dự đoán Q2 theo ngày")
-selected_date = st.date_input("📅 Chọn ngày", min_value=df['Day'].min().date(), max_value=df['Day'].max().date())
+st.markdown("### 🔴 Dự đoán Q2 theo ngày")
+selected_date = st.date_input("📅 Chọn ngày:", min_value=df['Day'].min().date(), max_value=df['Day'].max().date())
 
 if selected_date in df['Day'].dt.date.values:
     selected_row = df[df['Day'].dt.date == selected_date]
