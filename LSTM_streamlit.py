@@ -11,7 +11,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 # Đọc dữ liệu
-file_path = r'Data\data_1723.csv'
+file_path = r'data_1723.csv'
 df = pd.read_csv(file_path)
 
 # Tạo đặc trưng mới (Feature Engineering)
