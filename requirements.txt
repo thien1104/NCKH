@@ -1,8 +1,8 @@
 streamlit
 pandas
 numpy
-matplotlib
 joblib
+matplotlib
 tensorflow
 scikit-learn
-
+openpyxl
