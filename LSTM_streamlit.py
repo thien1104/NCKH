@@ -11,7 +11,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 # Đọc dữ liệu
-file_path = r'data_1723.csv'
+file_path = r'C:\NCKH\Data\data_1723.csv'
 df = pd.read_csv(file_path)
 
 # Tạo đặc trưng mới (Feature Engineering)
@@ -92,7 +92,7 @@ with col2:
 with col1:
     # Hiển thị bảng dữ liệu so sánh
     data_comparison = pd.DataFrame({
-    "Giá trị thực tế (m³/s)": {y_test_original.flatten()},
+    "Giá trị thực tế (m³/s)": y_test_original.flatten(),
     "Giá trị dự đoán (m³/s)": y_pred.flatten()
     })
 
