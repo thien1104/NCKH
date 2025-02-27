@@ -1,8 +1,4 @@
 streamlit
-pandas
-numpy
-joblib
 matplotlib
-tensorflow
-scikit-learn
-openpyxl
+pandas
+streamlit_gsheets
